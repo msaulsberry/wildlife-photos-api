@@ -1,0 +1,22 @@
+{
+  "name": "wildlife-photos-api",
+  "version": "1.0.0",
+  "description": "api for wildlife photos site",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msaulsberry/wildlife-photos-api.git"
+  },
+  "author": "Mitch Saulsberry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msaulsberry/wildlife-photos-api/issues"
+  },
+  "homepage": "https://github.com/msaulsberry/wildlife-photos-api#readme"
+}
