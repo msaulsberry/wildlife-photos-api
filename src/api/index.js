@@ -1,6 +1,7 @@
 import { applyMiddleware } from 'graphql-middleware';
 import fs from 'fs';
 import path from 'path';
+import {makeExecutableSchema} from 'graphql-tools';
 
 class ApiExplorer {
 

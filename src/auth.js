@@ -1,8 +1,10 @@
 import OktaJwtVerifier from '@okta/jwt-verifier';
 import * as okta from '@okta/okta-sdk-nodejs';
 
+require('dotenv').config();
+
 const oktaJwtVerifier = new OktaJwtVerifier({
-  issuer: '${process.env.OKTA_URI}/oauth2/default' // required
+  issuer: `${process.env.OKTA_URI}/oauth2/default`
 });
 
 const client = new okta.Client({
