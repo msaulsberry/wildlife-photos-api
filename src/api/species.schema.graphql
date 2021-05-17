@@ -1,0 +1,7 @@
+type Species {
+  commonName: String
+  scientificName: String
+  funFact: String
+  createdByUser: User
+  createdAt: GraphQLDateTime
+}

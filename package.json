@@ -3,11 +3,29 @@
   "version": "1.0.0",
   "description": "api for wildlife photos site",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "@okta/jwt-verifier": "^2.1.0",
+    "@okta/okta-sdk-nodejs": "^4.5.1",
+    "apollo-server-express": "^2.24.0",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "graphql-tag": "^2.12.4",
+    "graphql-tools": "^7.0.4",
+    "sequelize": "^6.6.2",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.14.1",
+    "graphql-iso-date": "^3.6.1",
+    "graphql-middleware": "^6.0.10"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "babel-node index.js"
+    "serve": "babel-node src/app.js"
   },
   "repository": {
     "type": "git",

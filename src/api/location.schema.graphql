@@ -1,0 +1,8 @@
+type Location {
+  country: String
+  description: String
+  isPrivate: Boolean
+  createdByUser: User
+  createdAt: GraphQLDateTime
+  photos: [Photo]
+}
