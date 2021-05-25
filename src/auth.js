@@ -23,7 +23,6 @@ const getUserIdFromToken = async (token) => {
   }
 };
 
-
 const getUser = async (userId, store) => {
   if (!userId) return;
 
@@ -31,7 +30,7 @@ const getUser = async (userId, store) => {
     const oktaUser = await client.getUser(userId);
     console.log(oktaUser.profile.email);
 
-    const users = await store.users.findOrCreate({ where: { email: oktaUser.profile.email }})
+    const users = await store.users.findOrCreate({ where: { email: oktaUser.profile.email }});
 
     let currentUser = users && users[0] ? users[0] : null;
     if (currentUser != null && !currentUser.first)  {

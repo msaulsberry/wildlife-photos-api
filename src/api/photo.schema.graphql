@@ -1,8 +1,17 @@
 type Photo {
-  link: String
+  filename: String
   description: String
   isPrivate: Boolean
   createdByUser: User
   createdAt: GraphQLDateTime
   species = [Species]
+}
+
+type Query {
+  photos: [Photo!]
+  photo(id: ID!) : Photo
+}
+
+type Mutation  {
+
 }

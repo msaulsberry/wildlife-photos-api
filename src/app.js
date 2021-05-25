@@ -40,8 +40,8 @@ apiExplorer.getSchema()
 
             let userId = await getUserIdFromToken(bearerToken);;
             let user = await getUser(userId, store);
-
-            return { user };
+            
+            return { user: user };
         },
     });
 

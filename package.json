@@ -4,6 +4,7 @@
   "description": "api for wildlife photos site",
   "main": "index.js",
   "dependencies": {
+    "@azure/storage-blob": "^12.5.0",
     "@okta/jwt-verifier": "^2.1.0",
     "@okta/okta-sdk-nodejs": "^4.5.1",
     "apollo-server-express": "^2.24.0",
