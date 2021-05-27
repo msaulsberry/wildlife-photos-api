@@ -13,7 +13,7 @@ module.exports.createStore = () => {
     logging: false,
   });
 
-  const users = db.define('users', {
+  const Users = db.define('users', {
     id: {
       type: SQL.INTEGER,
       primaryKey: true,
@@ -26,7 +26,7 @@ module.exports.createStore = () => {
     last: SQL.STRING,
   });
 
-  const species = db.define('species', {
+  const Species = db.define('species', {
     id: {
       type: SQL.INTEGER,
       primaryKey: true,
@@ -38,20 +38,21 @@ module.exports.createStore = () => {
     createdAt: SQL.DATE,
     createdByuserId: SQL.INTEGER,
   });
-
-  const locations = db.define('locations', {
+  
+  const Locations = db.define('locations', {
     id: {
       type: SQL.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
+    name: SQL.STRING,
     country: SQL.STRING,
     description: SQL.STRING,
     createdAt: SQL.DATE,
     createdByuserId: SQL.INTEGER,
   });
 
-  const photos = db.define('photos', {
+  const Photos = db.define('photos', {
     id: {
       type: SQL.INTEGER,
       primaryKey: true,
@@ -63,6 +64,11 @@ module.exports.createStore = () => {
     createdAt: SQL.DATE,
     createdByuserId: SQL.INTEGER,
   });
+  Photos.belongsToMany(Species, { through: 'SpeciesPhotos' }); //create join table
+  Species.belongsToMany(Photos, { through: 'SpeciesPhotos' });
 
-  return { users, species, locations, photos };
+  Locations.hasMany(Photos);
+  Photos.belongsTo(Locations);
+
+  return { Users, Species, Locations, Photos };
 };

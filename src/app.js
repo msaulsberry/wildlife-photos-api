@@ -17,10 +17,10 @@ apiExplorer.getSchema()
     app.use(express.json());
     app.use(cors());
     
-    await store.users.sync({force: true});
-    await store.species.sync({force: true});
-    await store.locations.sync({force: true});
-    await store.photos.sync({force: true});
+    await store.Users.sync({force: true});
+    await store.Species.sync({force: true});
+    await store.Locations.sync({force: true});
+    await store.Photos.sync({force: true});
 
     // Configure apollo
     const apolloServer = new ApolloServer({

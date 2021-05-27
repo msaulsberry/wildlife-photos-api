@@ -4,4 +4,5 @@ type Species {
   funFact: String
   createdByUser: User
   createdAt: GraphQLDateTime
+  photos: [Photos!]
 }
