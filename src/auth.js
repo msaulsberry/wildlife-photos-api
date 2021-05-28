@@ -4,11 +4,11 @@ import * as okta from '@okta/okta-sdk-nodejs';
 require('dotenv').config();
 
 const oktaJwtVerifier = new OktaJwtVerifier({
-  issuer: `${process.env.OKTA_URI}/oauth2/default`
+  issuer: `https://${process.env.OKTA_DOMAIN}/oauth2/default`
 });
 
 const client = new okta.Client({
-  orgUrl: process.env.OKTA_URI,
+  orgUrl: `https://${process.env.OKTA_DOMAIN}`,
   token: process.env.OKTA_API_TOKEN,
 });
 
@@ -19,7 +19,7 @@ const getUserIdFromToken = async (token) => {
     const jwt = await oktaJwtVerifier.verifyAccessToken(token, 'api://default');
     return jwt.claims.sub;
   } catch (error) {
-    console.log("there was an error");
+    console.log("there was an error with getting user id");
   }
 };
 

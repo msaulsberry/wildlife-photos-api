@@ -7,11 +7,11 @@ type Photo {
   species = [Species!]
 }
 
-type Query {
+extend type Query {
   photos: [Photo!]
   photo(id: ID!) : Photo
 }
 
-type Mutation  {
+extend type Mutation  {
   createPhoto: Photo!
 }

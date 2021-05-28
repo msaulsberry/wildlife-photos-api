@@ -37,6 +37,9 @@ apiExplorer.getSchema()
                 let bearer = bearerHeader.split(' ');
                 bearerToken = bearer[1];
             }
+            if (bearerToken === 'undefined') {
+                return;
+            }
 
             let userId = await getUserIdFromToken(bearerToken);;
             let user = await getUser(userId, store);

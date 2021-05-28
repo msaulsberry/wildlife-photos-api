@@ -1,6 +1,23 @@
+
+
 type User {
   email: String
   first: String
   last: String
-  createdAt: GraphQLDateTime
+  createdAt: DateTime
+}
+
+input UserInput {
+  email: String
+  first: String
+  last: String
+}
+
+type UserCreationResponse {
+  success: Boolean
+  message: String
+}
+
+extend type Mutation {
+  createUser(user: UserInput!) : UserCreationResponse
 }
